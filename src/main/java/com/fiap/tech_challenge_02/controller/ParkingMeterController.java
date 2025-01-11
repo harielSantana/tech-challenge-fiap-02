@@ -10,7 +10,7 @@ import com.fiap.tech_challenge_02.service.ParkingMeterService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/parking-meters")
+@RequestMapping("/parking-meters")
 public class ParkingMeterController {
 
     @Autowired

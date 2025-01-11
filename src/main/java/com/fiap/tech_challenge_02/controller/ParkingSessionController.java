@@ -3,17 +3,16 @@ package com.fiap.tech_challenge_02.controller;
 import com.fiap.tech_challenge_02.model.ParkingSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-
-import com.fiap.tech_challenge_02.service.
-
-@RestController
-@RequestMapping(value = "/parking-sessions")
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import com.fiap.tech_challenge_02.service.ParkingSessionService;
+
+
+
+@RestController
+@RequestMapping("/parking-sessions")
 public class ParkingSessionController {
 
     @Autowired

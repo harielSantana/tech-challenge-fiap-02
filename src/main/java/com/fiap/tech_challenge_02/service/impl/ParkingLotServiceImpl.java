@@ -1,31 +1,35 @@
 package com.fiap.tech_challenge_02.service.impl;
 
-import com.fiap.tech_challenge_02.model.ParkingMeter;
-import com.fiap.tech_challenge_02.repository.ParkingMeterRepository;
-import com.fiap.tech_challenge_02.service.ParkingMeterService;
-
+import com.fiap.tech_challenge_02.model.ParkingLot;
+import com.fiap.tech_challenge_02.repository.ParkingLotRepository;
+import com.fiap.tech_challenge_02.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class ParkingMeterServiceImpl implements ParkingMeterService {
+public class ParkingLotServiceImpl implements ParkingLotService {
 
     @Autowired
-    private ParkingMeterRepository parkingMeterRepository;
+    private ParkingLotRepository parkingLotRepository;
 
     @Override
-    public ParkingMeter criar(ParkingMeter parkingMeter) {
-        return parkingMeterRepository.save(parkingMeter);
+    public ParkingLot criar(ParkingLot parkingLot) {
+        // Salva o estacionamento no banco de dados
+        return parkingLotRepository.save(parkingLot);
     }
 
     @Override
-    public ParkingMeter obterPorId(String id) {
-        return parkingMeterRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Parquímetro não encontrado!"));
+    public ParkingLot obterPorId(String id) {
+        // Busca o estacionamento pelo ID
+        return parkingLotRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Estacionamento não encontrado com ID: " + id));
     }
 
     @Override
-    public List<ParkingMeter> obterTodos() {
-        return parkingMeterRepository.findAll();
+    public List<ParkingLot> obterTodos() {
+        // Retorna todos os estacionamentos
+        return parkingLotRepository.findAll();
     }
 }
