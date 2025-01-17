@@ -1,4 +1,4 @@
-package com.fiap.tech_challenge_02.domain.parquimetro;
+package com.fiap.tech_challenge_02.domain.cadastro;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 @Document
-public class ParkingLot {
+public class Estacionamento {
     @Id
     private String id;
     private String name;
