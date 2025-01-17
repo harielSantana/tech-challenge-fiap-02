@@ -1,5 +1,6 @@
 package com.fiap.tech_challenge_02.domain.parquimetro;
 
+import com.fiap.tech_challenge_02.domain.cadastro.Estacionamento;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -16,5 +17,5 @@ public class Tariff {
     private Double maxDailyRate;
 
     @DBRef
-    private ParkingLot parkingLot;
+    private Estacionamento parkingLot;
 }
