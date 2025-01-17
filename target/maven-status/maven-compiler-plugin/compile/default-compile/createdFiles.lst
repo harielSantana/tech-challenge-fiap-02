@@ -12,7 +12,6 @@ com/fiap/tech_challenge_02/application/parquimetro/TariffController.class
 com/fiap/tech_challenge_02/domain/parquimetro/impl/TariffServiceImpl.class
 com/fiap/tech_challenge_02/infrastructure/configs/TokenUsuarioInterceptor.class
 com/fiap/tech_challenge_02/domain/parquimetro/ParkingMeterService.class
-com/fiap/tech_challenge_02/infrastructure/usuario/UsuarioRepository.class
 com/fiap/tech_challenge_02/application/parquimetro/ParkingMeterController.class
 com/fiap/tech_challenge_02/application/pagamento/PagamentoController.class
 com/fiap/tech_challenge_02/domain/parquimetro/ParkingSessionService.class
@@ -20,6 +19,7 @@ com/fiap/tech_challenge_02/domain/avaliacao/RealizarAvaliacao.class
 com/fiap/tech_challenge_02/infrastructure/configs/ApiError.class
 com/fiap/tech_challenge_02/infrastructure/parquimetro/ParkingMeterRepository.class
 com/fiap/tech_challenge_02/domain/pagamento/ValorPagamento.class
+com/fiap/tech_challenge_02/infrastructure/cadastro/UsuarioRepository.class
 com/fiap/tech_challenge_02/domain/parquimetro/ParkingMeter.class
 com/fiap/tech_challenge_02/infrastructure/avaliacao/AvaliacaoClientRepository.class
 com/fiap/tech_challenge_02/infrastructure/configs/SwaggerConfig.class

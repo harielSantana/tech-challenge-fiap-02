@@ -37,6 +37,7 @@
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/domain/parquimetro/impl/ParkingSessionServiceImpl.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/domain/parquimetro/impl/TariffServiceImpl.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/avaliacao/AvaliacaoClientRepository.java
+/home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/cadastro/UsuarioRepository.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/clients/GatewayPagamentoFake.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/configs/ApiError.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/configs/ApiExceptionHandler.java
@@ -50,4 +51,3 @@
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/parquimetro/ParkingMeterRepository.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/parquimetro/ParkingSessionRepository.java
 /home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/parquimetro/TariffRepository.java
-/home/fmelo/Posgraduate/repo/tech-challenge-fiap-02/src/main/java/com/fiap/tech_challenge_02/infrastructure/usuario/UsuarioRepository.java

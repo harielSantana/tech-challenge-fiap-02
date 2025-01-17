@@ -20,6 +20,9 @@ public class GatewayPagamentoFake {
         log.info("Gateway de pagamento sendo chamado ...");
         boolean aprovado = false;
 
+        request.alterarStatus(StatusPagamentoEnum.EM_ANALISE);
+        this.repository.save(request);
+
         try {
             Thread.sleep(60000);
             aprovado = true;

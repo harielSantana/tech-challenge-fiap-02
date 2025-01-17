@@ -57,7 +57,7 @@ public class TokenUsuarioInterceptor implements HandlerInterceptor {
                 throw new PolicyException(NAO_AUTENTICADO);
             }
 
-            Optional<Usuario> usuario = repository.findById(Long.valueOf(headerId));
+            Optional<Usuario> usuario = repository.findById(headerId);
             if (!usuario.isPresent()) {
                 throw new PolicyException(NAO_AUTENTICADO);
             }

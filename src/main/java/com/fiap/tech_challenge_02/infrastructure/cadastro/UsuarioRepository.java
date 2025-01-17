@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UsuarioRepository extends MongoRepository<Usuario, Long> {
+public interface UsuarioRepository extends MongoRepository<Usuario, String> {
 
     Optional<Usuario> findByIdAndTpUsuario(String id, TipoUsuarioEnum tpUsuario);
 
@@ -17,6 +17,4 @@ public interface UsuarioRepository extends MongoRepository<Usuario, Long> {
     Optional<Usuario> findByToken(String token);
 
     Optional<Usuario> findByUsername(String username);
-
-    Optional<Usuario> findById(Long aLong);
 }
