@@ -1,6 +1,7 @@
 package com.fiap.tech_challenge_02.domain.avaliacao;
 
 import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
+import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSession;
 import lombok.Getter;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
@@ -19,16 +20,20 @@ public class Avaliacao extends AbstractAggregateRoot<Avaliacao> {
     private String id;
     private Nota nota;
     private String comentario;
-    @DBRef
-    private Usuario usuarioCadastrante;
 
-    public Avaliacao(Nota nota, String comentario, Usuario usuario) {
+    @DBRef
+    private Usuario cliente;
+    @DBRef
+    private ParkingSession sessao;
+
+    public Avaliacao(Nota nota, String comentario, Usuario usuario, ParkingSession sessao) {
         Objects.requireNonNull(nota, "Nota não pode ser nula");
         Objects.requireNonNull(usuario, "Usuário não pode ser nulo");
+        Objects.requireNonNull(sessao, "Sessão checkin não pode ser nulo");
 
         this.nota = nota;
         this.comentario = comentario;
-        this.usuarioCadastrante = usuario;
+        this.cliente = usuario;
     }
 
     public void avaliacaoRealizada() {
