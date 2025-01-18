@@ -1,6 +1,6 @@
 package com.fiap.tech_challenge_02.domain.parquimetro;
 
-public enum ParkingStatus {
+public enum SessaoStatus {
     ACTIVE,
     COMPLETED,
     EXPIRED

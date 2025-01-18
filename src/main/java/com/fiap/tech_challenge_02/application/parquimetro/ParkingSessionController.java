@@ -1,7 +1,7 @@
 package com.fiap.tech_challenge_02.application.parquimetro;
 
-import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSession;
-import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSessionService;
+import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetro;
+import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,20 +13,20 @@ import java.util.List;
 public class ParkingSessionController {
 
     @Autowired
-    private ParkingSessionService parkingSessionService;
+    private SessaoParquimetroService sessaoParquimetroService;
 
     @GetMapping
-    public List<ParkingSession> obterTodos() {
-        return parkingSessionService.obterTodos();
+    public List<SessaoParquimetro> obterTodos() {
+        return sessaoParquimetroService.obterTodos();
     }
 
     @GetMapping("/{id}")
-    public ParkingSession obterPorId(@PathVariable String id) {
-        return parkingSessionService.obterPorId(id);
+    public SessaoParquimetro obterPorId(@PathVariable String id) {
+        return sessaoParquimetroService.obterPorId(id);
     }
 
     @PostMapping
-    public ParkingSession criar(@RequestBody ParkingSession parkingSession) {
-        return parkingSessionService.criar(parkingSession);
+    public SessaoParquimetro criar(@RequestBody SessaoParquimetro parkingSession) {
+        return sessaoParquimetroService.criar(parkingSession);
     }
 }

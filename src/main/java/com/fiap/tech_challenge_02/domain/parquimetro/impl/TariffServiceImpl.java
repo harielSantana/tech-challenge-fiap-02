@@ -1,8 +1,8 @@
 package com.fiap.tech_challenge_02.domain.parquimetro.impl;
 
-import com.fiap.tech_challenge_02.domain.parquimetro.Tariff;
-import com.fiap.tech_challenge_02.domain.parquimetro.TariffService;
-import com.fiap.tech_challenge_02.infrastructure.parquimetro.TariffRepository;
+import com.fiap.tech_challenge_02.domain.cadastro.Tarifa;
+import com.fiap.tech_challenge_02.domain.cadastro.TariffService;
+import com.fiap.tech_challenge_02.infrastructure.cadastro.TarifaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +13,21 @@ public class TariffServiceImpl implements TariffService {
 
 
     @Autowired
-    private TariffRepository tariffRepository;
+    private TarifaRepository tarifaRepository;
 
     @Override
-    public Tariff criar(Tariff tariff) {
-        return tariffRepository.save(tariff);
+    public Tarifa criar(Tarifa tarifa) {
+        return tarifaRepository.save(tarifa);
     }
 
     @Override
-    public Tariff obterPorId(String id) {
-        return tariffRepository.findById(id)
+    public Tarifa obterPorId(String id) {
+        return tarifaRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Tarifa não encontrada!"));
     }
 
     @Override
-    public List<Tariff> obterTodos() {
-        return tariffRepository.findAll();
+    public List<Tarifa> obterTodos() {
+        return tarifaRepository.findAll();
     }
 }

@@ -1,7 +1,7 @@
 package com.fiap.tech_challenge_02.application.parquimetro;
 
-import com.fiap.tech_challenge_02.domain.parquimetro.Tariff;
-import com.fiap.tech_challenge_02.domain.parquimetro.TariffService;
+import com.fiap.tech_challenge_02.domain.cadastro.Tarifa;
+import com.fiap.tech_challenge_02.domain.cadastro.TariffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,17 +16,17 @@ public class TariffController {
     private TariffService tariffService;
 
     @GetMapping
-    public List<Tariff> obterTodos() {
+    public List<Tarifa> obterTodos() {
         return tariffService.obterTodos();
     }
 
     @GetMapping("/{id}")
-    public Tariff obterPorId(@PathVariable String id) {
+    public Tarifa obterPorId(@PathVariable String id) {
         return tariffService.obterPorId(id);
     }
 
     @PostMapping
-    public Tariff criar(@RequestBody Tariff tariff) {
+    public Tarifa criar(@RequestBody Tarifa tariff) {
         return tariffService.criar(tariff);
     }
 }

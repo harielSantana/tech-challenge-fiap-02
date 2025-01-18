@@ -2,7 +2,7 @@ package com.fiap.tech_challenge_02.domain.pagamento;
 
 import com.fiap.tech_challenge_02.domain.cadastro.BuscarUsuarios;
 import com.fiap.tech_challenge_02.application.pagamento.PagamentoRequest;
-import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSessionService;
+import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import com.fiap.tech_challenge_02.infrastructure.clients.GatewayPagamentoFake;
 import com.fiap.tech_challenge_02.infrastructure.pagamento.PagamentoRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class RealizarPagamento {
 
     private final BuscarUsuarios buscarUsuarios;
-    private final ParkingSessionService sessaoService;
+    private final SessaoParquimetroService sessaoService;
     private final GatewayPagamentoFake gatewayPagamentoFake;
     private final PagamentoRepository pagamentoRepository;
 
