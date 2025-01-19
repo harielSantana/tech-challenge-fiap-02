@@ -2,8 +2,8 @@ package com.fiap.tech_challenge_02.infrastructure.configs;
 
 import com.fiap.tech_challenge_02.domain.cadastro.TipoUsuarioEnum;
 import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
-import com.fiap.tech_challenge_02.infrastructure.exceptions.PolicyException;
 import com.fiap.tech_challenge_02.infrastructure.cadastro.UsuarioRepository;
+import com.fiap.tech_challenge_02.infrastructure.exceptions.PolicyException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

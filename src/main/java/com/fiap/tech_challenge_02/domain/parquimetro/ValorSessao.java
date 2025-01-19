@@ -13,13 +13,11 @@ import java.util.Objects;
 public class ValorSessao {
 
     private BigDecimal valor;
-    private LocalDateTime entrada;
-    private LocalDateTime saida;
 
     public ValorSessao(LocalDateTime entrada, LocalDateTime saida, Tarifa tarifa) {
-        Objects.requireNonNull(entrada,"Data hora entrada sessao nao pode ser nula");
-        Objects.requireNonNull(saida,"Data hora saida sessao nao pode ser nula");
-        Objects.requireNonNull(tarifa,"Tarifa sessao nao pode ser nula");
+        Objects.requireNonNull(entrada, "Data hora entrada sessao nao pode ser nula");
+        Objects.requireNonNull(saida, "Data hora saida sessao nao pode ser nula");
+        Objects.requireNonNull(tarifa, "Tarifa sessao nao pode ser nula");
 
         Double valorHora = tarifa.getHourlyRate();
         if (valorHora == null || valorHora == 0) {

@@ -1,4 +1,4 @@
-package com.fiap.tech_challenge_02.domain.parquimetro.impl;
+package com.fiap.tech_challenge_02.domain.cadastro.impl;
 
 import com.fiap.tech_challenge_02.domain.cadastro.Tarifa;
 import com.fiap.tech_challenge_02.domain.cadastro.TariffService;
