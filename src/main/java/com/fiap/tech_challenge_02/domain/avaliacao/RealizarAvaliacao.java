@@ -2,7 +2,7 @@ package com.fiap.tech_challenge_02.domain.avaliacao;
 
 import com.fiap.tech_challenge_02.application.avaliacao.CadastrarAvaliacaoRequest;
 import com.fiap.tech_challenge_02.domain.cadastro.BuscarUsuarios;
-import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSessionService;
+import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import com.fiap.tech_challenge_02.infrastructure.avaliacao.AvaliacaoClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class RealizarAvaliacao {
 
     private final BuscarUsuarios buscarUsuarios;
     private final AvaliacaoClientRepository avaliacaoRepository;
-    private final ParkingSessionService sessaoService;
+    private final SessaoParquimetroService sessaoService;
 
     @Transactional
     public void avaliar(CadastrarAvaliacaoRequest request) {

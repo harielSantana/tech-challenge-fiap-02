@@ -1,12 +1,13 @@
 package com.fiap.tech_challenge_02.domain.pagamento;
 
 import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
-import com.fiap.tech_challenge_02.domain.parquimetro.ParkingSession;
+import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetro;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.AbstractAggregateRoot;
+import org.springframework.data.domain.AfterDomainEventPublication;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -29,10 +30,10 @@ public class Pagamento extends AbstractAggregateRoot<Pagamento> {
     @DBRef
     private Usuario usuario;
     @DBRef
-    private ParkingSession sessao;
+    private SessaoParquimetro sessao;
 
     public Pagamento(BigDecimal valor, TipoPagamentoEnum tipo, Usuario usuario,
-                     ParkingSession sessao) {
+                     SessaoParquimetro sessao) {
         Objects.requireNonNull(tipo, "Tipo de pagamento deve ser informado");
         Objects.requireNonNull(tipo, "Cliente nao pode ser nulo para pagamento");
         Objects.requireNonNull(tipo, "Sessao nao encontrada para pagamento");
@@ -44,7 +45,8 @@ public class Pagamento extends AbstractAggregateRoot<Pagamento> {
         this.sessao = sessao;
     }
 
-    public void pagamentoRealizado() {
+    @AfterDomainEventPublication
+    private void pagamentoRealizado() {
         registerEvent(new PagamentoRealizado(this));
     }
 

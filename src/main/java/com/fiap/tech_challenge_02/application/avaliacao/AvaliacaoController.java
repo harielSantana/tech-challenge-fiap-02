@@ -19,11 +19,11 @@ public class AvaliacaoController {
 
     private final RealizarAvaliacao realizarAvaliacao;
 
-    @Operation(summary = "Cadastrar avaliacao do servico")
+    @Operation(summary = "Cadastrar avaliacao do cliente sobre o parquimetro")
     @ResponseBody
     @PostMapping
     public ResponseEntity<String> cadastrarAvaliacao(@RequestBody @Valid CadastrarAvaliacaoRequest request) {
-        log.info("Registrnado avaliacao para usuario id: {} e checkin de id: {}", request.getUsuarioId(),
+        log.info("Registrnado avaliacao para usuario id: {} e sessao de id: {}", request.getUsuarioId(),
                 request.getSessaoId());
         realizarAvaliacao.avaliar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body("Avaliação cadastrada com sucesso.");
