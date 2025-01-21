@@ -24,15 +24,12 @@ public class TokenUsuarioInterceptor implements HandlerInterceptor {
     public static final String TOKEN_INVALIDO = "Token inválido";
     public static final String ACESSO_NAO_AUTORIZADO = "Acesso não autorizado";
 
-    private List<String> rotasBarbeiroProibidas = List.of("/filiais", "/barbeiros", "/servicos", "/filiais",
-            "/filiais/barbeiros");
+    private List<String> rotasFuncionariosProibidas = List.of("/tarifas");
 
-    private List<String> rotasUsuarioProbidas = List.of("/filiais", "/barbeiros", "/servicos", "/filiais/barbeiros",
-            "/barbeiros/servicos", "barbeiros/horarios", "/clientes", "/pagamentos/barbeiros", "/agendamentos" +
-                    "/confirmar/servico", "/agendamentos/barbeiros");
+    private List<String> rotasUsuarioProbidas = List.of("/tarifas");
 
-    private List<String> urisAutenticadas = List.of("/filiais", "/barbeiros", "/servicos", "/agendamentos", "/clientes",
-            "/pagamentos");
+    private List<String> urisAutenticadas = List.of("/tarifas", "/estacionamentos", "/pagamentos", "/avaliacoes",
+            "/parquimetro");
 
     private final UsuarioRepository repository;
 
@@ -46,7 +43,7 @@ public class TokenUsuarioInterceptor implements HandlerInterceptor {
         AtomicBoolean uriPrecisaEstarAutenticado = new AtomicBoolean(false);
 
         urisAutenticadas.forEach(uriAutenticada -> {
-            if (requestURI.startsWith(uriAutenticada)) {
+            if (requestURI.contains(uriAutenticada)) {
                 uriPrecisaEstarAutenticado.set(true);
             }
         });
@@ -78,8 +75,8 @@ public class TokenUsuarioInterceptor implements HandlerInterceptor {
             return;
         }
 
-        if (TipoUsuarioEnum.BARBEIRO.equals(usuario.getTpUsuario())) {
-            if (rotasBarbeiroProibidas.contains(rota)) {
+        if (TipoUsuarioEnum.FUNCIONARIO.equals(usuario.getTpUsuario())) {
+            if (rotasFuncionariosProibidas.contains(rota)) {
                 throw new PolicyException(ACESSO_NAO_AUTORIZADO);
             }
         } else if (TipoUsuarioEnum.CLIENTE.equals(usuario.getTpUsuario())) {

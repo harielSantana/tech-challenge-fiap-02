@@ -3,40 +3,40 @@ package com.fiap.tech_challenge_02.domain.parquimetro.impl;
 import com.fiap.tech_challenge_02.application.parquimetro.CriarSessaoRequest;
 import com.fiap.tech_challenge_02.domain.cadastro.BuscarUsuarios;
 import com.fiap.tech_challenge_02.domain.cadastro.EstacionamentoService;
-import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetro;
+import com.fiap.tech_challenge_02.domain.parquimetro.Parquimetro;
 import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import com.fiap.tech_challenge_02.infrastructure.parquimetro.SessaoParquimetroRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class SessaoParquimetroServiceImpl implements SessaoParquimetroService {
 
-    @Autowired
-    private SessaoParquimetroRepository sessaoParquimetroRepository;
-    private BuscarUsuarios buscarUsuarios;
-    private EstacionamentoService estacionamentoService;
+    private final SessaoParquimetroRepository sessaoParquimetroRepository;
+    private final BuscarUsuarios buscarUsuarios;
+    private final EstacionamentoService estacionamentoService;
 
     @Override
-    public SessaoParquimetro criar(CriarSessaoRequest parkingSession) {
+    public Parquimetro criar(CriarSessaoRequest parkingSession) {
         var cliente = this.buscarUsuarios.porId(parkingSession.getClienteId());
         var estacionamento = this.estacionamentoService.obterPorId(parkingSession.getEstacionamentoId());
 
-        var sessao = new SessaoParquimetro(cliente, estacionamento, parkingSession.getQuantidadeHoras());
+        var sessao = new Parquimetro(cliente, estacionamento, parkingSession.getQuantidadeHoras());
 
         return sessaoParquimetroRepository.save(sessao);
     }
 
     @Override
-    public SessaoParquimetro obterPorId(String id) {
+    public Parquimetro obterPorId(String id) {
         return sessaoParquimetroRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Sessão não encontrada!"));
     }
 
     @Override
-    public List<SessaoParquimetro> obterTodos() {
+    public List<Parquimetro> obterTodos() {
         return sessaoParquimetroRepository.findAll();
     }
 }

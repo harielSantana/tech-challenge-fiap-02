@@ -1,6 +1,6 @@
 package com.fiap.tech_challenge_02.application.parquimetro;
 
-import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetro;
+import com.fiap.tech_challenge_02.domain.parquimetro.Parquimetro;
 import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,19 +21,19 @@ public class ParquimetroController {
 
     @Operation(summary = "Listar todas sessoes")
     @GetMapping
-    public List<SessaoParquimetro> obterTodos() {
+    public List<Parquimetro> obterTodos() {
         return sessaoParquimetroService.obterTodos();
     }
 
     @Operation(summary = "Obter uma sessao por id")
     @GetMapping("/{id}")
-    public SessaoParquimetro obterPorId(@PathVariable String id) {
+    public Parquimetro obterPorId(@PathVariable String id) {
         return sessaoParquimetroService.obterPorId(id);
     }
 
     @Operation(summary = "Registrar nova sessao do cliente no parquimetro")
     @PostMapping
-    public SessaoParquimetro criar(@RequestBody CriarSessaoRequest sessao) {
+    public Parquimetro criar(@RequestBody CriarSessaoRequest sessao) {
         return sessaoParquimetroService.criar(sessao);
     }
 }

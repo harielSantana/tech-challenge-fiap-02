@@ -11,13 +11,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document("usuarios")
+@Document
 public class Usuario extends AbstractAggregateRoot<Usuario> {
 
     @Id
     private String id;
     private String nome;
     private String email;
+    private String veiculoPlate;
     private CPF cpf;
     private Endereco endereco;
     private TipoUsuarioEnum tpUsuario;

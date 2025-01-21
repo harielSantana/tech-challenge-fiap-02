@@ -21,9 +21,10 @@ public class InicializaCadastroGestor {
     void cadastraGestor() {
         String pass = Base64.getEncoder().encodeToString("123".getBytes());
 
-        var gestor = new Usuario(null,
+        var gestor = new Usuario("1",
                 "Gestor X",
                 "emaigestor@teste.com.br",
+                "xx",
                 new CPF("123.123.123-12"),
                 new Endereco(324, "15569-000"),
                 TipoUsuarioEnum.GESTOR, "admin",

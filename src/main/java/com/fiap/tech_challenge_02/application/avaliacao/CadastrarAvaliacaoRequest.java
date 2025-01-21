@@ -16,10 +16,9 @@ public class CadastrarAvaliacaoRequest {
     private String sessaoId;
     @Schema(description = "Id do cliente/avaliador")
     private String usuarioId;
-    @NotNull
+    @NotBlank
     @Schema(description = "Comentário avaliação", example = "Ótimo atendimento e estrutura acomodante")
     private String comentario;
-    @Size(min = 0, max = 5)
     @NotNull
     @Schema(description = "Comentário avaliação", example = "5")
     private Integer nota;

@@ -4,6 +4,7 @@ import com.fiap.tech_challenge_02.application.avaliacao.CadastrarAvaliacaoReques
 import com.fiap.tech_challenge_02.domain.cadastro.BuscarUsuarios;
 import com.fiap.tech_challenge_02.domain.parquimetro.SessaoParquimetroService;
 import com.fiap.tech_challenge_02.infrastructure.avaliacao.AvaliacaoClientRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +18,7 @@ public class RealizarAvaliacao {
     private final SessaoParquimetroService sessaoService;
 
     @Transactional
-    public void avaliar(CadastrarAvaliacaoRequest request) {
+    public void avaliar(@Valid CadastrarAvaliacaoRequest request) {
         var cliente = this.buscarUsuarios.porId(request.getUsuarioId());
         var sessao = this.sessaoService.obterPorId(request.getSessaoId());
         var avaliacao = new Avaliacao(new Nota(request.getNota()), request.getComentario(), cliente, sessao);

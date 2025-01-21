@@ -5,9 +5,9 @@ import com.fiap.tech_challenge_02.application.parquimetro.CriarSessaoRequest;
 import java.util.List;
 
 public interface SessaoParquimetroService {
-    SessaoParquimetro criar(CriarSessaoRequest parkingSession);
+    Parquimetro criar(CriarSessaoRequest parkingSession);
 
-    SessaoParquimetro obterPorId(String id);
+    Parquimetro obterPorId(String id);
 
-    List<SessaoParquimetro> obterTodos();
+    List<Parquimetro> obterTodos();
 }
