@@ -1,10 +1,7 @@
 package com.fiap.tech_challenge_02.application.usuario;
 
-import com.fiap.tech_challenge_02.application.usuario.request.LoginRequest;
-import com.fiap.tech_challenge_02.application.usuario.request.LogoutResquest;
-import com.fiap.tech_challenge_02.application.usuario.response.LoginResponse;
-import com.fiap.tech_challenge_02.domain.cadastro.impl.LoginUsuarioService;
-import com.fiap.tech_challenge_02.domain.cadastro.impl.LogoutUsuarioService;
+import com.fiap.tech_challenge_02.domain.cadastro.LoginUsuarioService;
+import com.fiap.tech_challenge_02.domain.cadastro.LogoutUsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
