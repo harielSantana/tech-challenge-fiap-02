@@ -5,8 +5,10 @@ Repositório criado para a implementação do sistema para demostrar a funcional
 Java17
 Maven gerenciador de pacotes e depedências.
 IDE opcional
+ ou
+Docker
 
-# run
+# run 
 Instalar jdk 17
 Instalar apache maven >= 3.8, caso sua IDE não tenha.
 Configurar build do projeto na IDE preferida.
@@ -14,6 +16,11 @@ Configurar build do projeto na IDE preferida.
 # run terminal
 Acessar caminho root do projeto e rodar um dos dos comandos: mvn spring-boot:run ou mvnDebug spring-boot:run para debug.
 Necessário ter o maven instalado e configurado nas varíaveis de ambiente apontando para seu caminho da pasta no qual foi instalado, para que o terminal possa reconhecer o comando mvn.
+
+# run by docker
+Acessar caminho root do projeto e rodar comandos:
+sudo docker build . -t app-fiap:2
+sudo docker-compose up -d
 
 # docs apis
 Swagger: http://localhost:8080/swagger-ui.html

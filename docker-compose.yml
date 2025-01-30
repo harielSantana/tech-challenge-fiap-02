@@ -1,0 +1,40 @@
+version: '1.0'
+services:
+  mongo-db:
+    image: mongo:latest
+    volumes:
+      - db_data:/var/lib/mongo
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      - my-network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_ROOT_DATABASE=techchallenge2
+  app-innova-park:
+    image: app-fiap:2
+    volumes:
+      - app_data:/var/app
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo-db
+    networks:
+      - my-network
+    environment:
+      - MONGODB_HOST=mongo-db
+      - MONGODB_PORT=27017
+      - MONGODB_DB=techchallange2
+      - MONGODB_USER=admin
+      - MONGODB_PASS=admin
+      - MONGODB_AUTH_DB=admin
+
+volumes:
+  db_data:
+  app_data:
+networks:
+  my-network:
+    driver: bridge

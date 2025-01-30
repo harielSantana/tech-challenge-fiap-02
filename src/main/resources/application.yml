@@ -1,13 +1,11 @@
 spring:
   application:
     name: tech_challenge_02
-data:
-  mongodb:
-    host: localhost
-    port: 27017
-    database: techchallenge
-    username: admin
-    password: admin
-    authentication-database: admin
-server:
-  port: 8080
+  data:
+    mongodb:
+      host: ${MONGODB_HOST}
+      port: ${MONGODB_PORT}
+      database: ${MONGODB_DB}
+      username: ${MONGODB_USER}
+      password: ${MONGODB_PASS}
+      authentication-database: ${MONGODB_AUTH_DB}
