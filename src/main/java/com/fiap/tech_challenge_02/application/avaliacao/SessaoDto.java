@@ -26,10 +26,12 @@ public class SessaoDto {
         }
 
         return SessaoDto.builder()
+                .id(sessao.getId())
                 .cliente(UsuarioDto.toDTO(sessao.getCliente()))
                 .entrada(sessao.getEntrada())
                 .saida(sessao.getSaida())
                 .status(sessao.getStatus())
+                .valorSessao(sessao.getValorSessao())
                 .estacionamento(EstacionamentoDto.toDTO(sessao.getEstacionamento()))
                 .build();
     }

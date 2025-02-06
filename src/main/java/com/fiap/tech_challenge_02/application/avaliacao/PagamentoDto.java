@@ -26,8 +26,10 @@ public class PagamentoDto {
 
     public static PagamentoDto toDTO(Pagamento pagamento) {
         return PagamentoDto.builder()
+                .id(pagamento.getId())
                 .cliente(UsuarioDto.toDTO(pagamento.getUsuario()))
                 .dataHora(pagamento.getDataHora())
+                .valor(pagamento.getValor())
                 .tipo(pagamento.getTipo())
                 .status(pagamento.getStatus())
                 .sessao(SessaoDto.toDTO(pagamento.getSessao()))

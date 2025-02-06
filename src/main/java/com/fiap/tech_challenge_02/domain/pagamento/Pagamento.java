@@ -43,6 +43,7 @@ public class Pagamento extends AbstractAggregateRoot<Pagamento> {
         this.valor = new ValorPagamento(valor);
         this.usuario = usuario;
         this.sessao = sessao;
+        this.tipo = tipo;
     }
 
     @AfterDomainEventPublication

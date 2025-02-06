@@ -3,9 +3,9 @@ spring:
     name: tech_challenge_02
   data:
     mongodb:
-      host: ${MONGODB_HOST}
-      port: ${MONGODB_PORT}
-      database: ${MONGODB_DB}
-      username: ${MONGODB_USER}
-      password: ${MONGODB_PASS}
-      authentication-database: ${MONGODB_AUTH_DB}
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      database: ${MONGODB_DB:techchallenge}
+      username: ${MONGODB_USER:admin}
+      password: ${MONGODB_PASS:admin}
+      authentication-database: ${MONGODB_AUTH_DB:admin}

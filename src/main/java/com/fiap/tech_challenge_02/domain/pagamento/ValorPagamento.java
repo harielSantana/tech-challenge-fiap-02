@@ -2,11 +2,13 @@ package com.fiap.tech_challenge_02.domain.pagamento;
 
 import com.fiap.tech_challenge_02.infrastructure.exceptions.PolicyException;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@NoArgsConstructor
 @ToString
 @Getter
 public class ValorPagamento {
