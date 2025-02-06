@@ -28,7 +28,7 @@ public class RealizarPagamento {
 
         this.pagamentoRepository.save(pagamento);
 
-        if (TipoPagamentoEnum.NO_ESTACIONAMETO.equals(pagamento.getTipo())) {
+        if (TipoPagamentoEnum.NO_ESTACIONAMENTO.equals(pagamento.getTipo())) {
             pagamento.alterarStatus(StatusPagamentoEnum.REALIZADO);
         } else {
             // Pagamento online
