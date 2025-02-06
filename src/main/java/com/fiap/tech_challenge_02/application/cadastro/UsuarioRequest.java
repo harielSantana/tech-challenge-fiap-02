@@ -11,7 +11,6 @@ import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
-@Document
 @Setter
 public class UsuarioRequest {
     @NotBlank

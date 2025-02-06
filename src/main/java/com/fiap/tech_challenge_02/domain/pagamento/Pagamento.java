@@ -46,7 +46,7 @@ public class Pagamento extends AbstractAggregateRoot<Pagamento> {
     }
 
     @AfterDomainEventPublication
-    private void pagamentoRealizado() {
+    private void kpagamentoRealizado() {
         registerEvent(new PagamentoRealizado(this));
     }
 

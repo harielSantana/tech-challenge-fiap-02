@@ -1,5 +1,6 @@
 package com.fiap.tech_challenge_02.application.cadastro;
 
+import com.fiap.tech_challenge_02.application.avaliacao.UsuarioDto;
 import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
 import com.fiap.tech_challenge_02.domain.cadastro.impl.UsuarioServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,20 +12,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag(name="Cadastro de Usuário")
+@Tag(name="Cadastros")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/v1/usuarios")
+@RequestMapping(value = "/v1/usuarios", produces = "application/json")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioServiceImpl usuarioService;
+    private final UsuarioServiceImpl usuarioService;
 
     @Operation(summary = "Cadastro usuários")
     @PostMapping
-    public Usuario criar(@RequestBody UsuarioRequest usuario)
-    {
-        return usuarioService.criar(usuario);
+    public UsuarioDto criar(@RequestBody UsuarioRequest usuario) {
+        return UsuarioDto.toDTO(usuarioService.criar(usuario));
     }
 
 }
