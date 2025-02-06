@@ -1,4 +1,4 @@
-package com.fiap.tech_challenge_02.application.usuario.request;
+package com.fiap.tech_challenge_02.application.usuario;
 
 
 import lombok.Getter;

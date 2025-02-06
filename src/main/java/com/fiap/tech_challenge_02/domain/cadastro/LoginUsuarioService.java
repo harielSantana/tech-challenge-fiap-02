@@ -1,8 +1,7 @@
-package com.fiap.tech_challenge_02.domain.cadastro.impl;
+package com.fiap.tech_challenge_02.domain.cadastro;
 
-import com.fiap.tech_challenge_02.application.usuario.request.LoginRequest;
-import com.fiap.tech_challenge_02.application.usuario.response.LoginResponse;
-import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
+import com.fiap.tech_challenge_02.application.usuario.LoginRequest;
+import com.fiap.tech_challenge_02.application.usuario.LoginResponse;
 import com.fiap.tech_challenge_02.infrastructure.cadastro.UsuarioRepository;
 import com.fiap.tech_challenge_02.infrastructure.exceptions.PolicyException;
 import jakarta.validation.Valid;

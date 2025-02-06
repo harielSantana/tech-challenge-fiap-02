@@ -1,8 +1,7 @@
-package com.fiap.tech_challenge_02.domain.cadastro.impl;
+package com.fiap.tech_challenge_02.domain.cadastro;
 
 
-import com.fiap.tech_challenge_02.application.usuario.request.LogoutResquest;
-import com.fiap.tech_challenge_02.domain.cadastro.Usuario;
+import com.fiap.tech_challenge_02.application.usuario.LogoutResquest;
 import com.fiap.tech_challenge_02.infrastructure.cadastro.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

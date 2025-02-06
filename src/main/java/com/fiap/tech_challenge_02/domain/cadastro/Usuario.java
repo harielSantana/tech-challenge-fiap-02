@@ -2,6 +2,7 @@ package com.fiap.tech_challenge_02.domain.cadastro;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.AbstractAggregateRoot;
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
+@Getter
 public class Usuario extends AbstractAggregateRoot<Usuario> {
 
     @Id
