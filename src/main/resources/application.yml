@@ -3,9 +3,6 @@ spring:
     name: tech_challenge_02
   data:
     mongodb:
-      host: ${MONGODB_HOST:localhost}
-      port: ${MONGODB_PORT:27017}
-      database: ${MONGODB_DB:techchallenge}
-      username: ${MONGODB_USER:admin}
-      password: ${MONGODB_PASS:admin}
-      authentication-database: ${MONGODB_AUTH_DB:admin}
+      uri: mongodb+srv://admin:yK4mTYBq1XjzI8T4@my-cluster.jj29c.mongodb.net/techchallenge
+server:
+  port: 8080

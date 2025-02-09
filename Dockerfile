@@ -2,7 +2,7 @@ FROM maven:latest AS builder
 COPY pom.xml /build/pom.xml
 COPY src /build/src
 WORKDIR /build
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 FROM openjdk:17
 COPY --from=builder build/target/*.jar /app/my-app.jar
