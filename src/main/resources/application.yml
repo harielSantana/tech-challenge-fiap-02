@@ -3,6 +3,4 @@ spring:
     name: tech_challenge_02
   data:
     mongodb:
-      uri: mongodb+srv://admin:yK4mTYBq1XjzI8T4@my-cluster.jj29c.mongodb.net/techchallenge
-server:
-  port: 8080
+      uri: mongodb+srv://admin:yK4mTYBq1XjzI8T4@my-cluster.jj29c.mongodb.net/techchallenge?retryWrites=true&w=majority
