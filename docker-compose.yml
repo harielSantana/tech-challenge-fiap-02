@@ -1,9 +1,12 @@
 version: '1.0'
 services:
   app-innova-park:
-    image: app-fiap:latest
+    build: .
     volumes:
       - app_data:/var/app
     restart: always
     ports:
       - 8080:8080
+
+volumes:
+  app_data:
